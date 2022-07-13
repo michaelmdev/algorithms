@@ -6,33 +6,12 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 import java.util.Random;
 
-public class SelectionSort {
-    /**
-     * In-place comparison sorting.
-     *
-     * @param array массив элементов для сортировк
-     * @param <T>   тип элементов
-     */
-    public static <T extends Comparable<? super T>> void sort(T[] array) {
-        T buf;
-        for (int j = 0, k = array.length - 1; j < k; ++j) {
-            int min = j;
-            for (int i = j + 1, n = array.length; i < n; ++i) {
-                if (array[i].compareTo(array[min]) < 0) {
-                    min = i;
-                }
-            }
-            buf = array[min];
-            array[min] = array[j];
-            array[j] = buf;
-        }
-    }
-}
-
 class SelectionSortTest {
 
+    // more aggressive but precise
+    // @ValueSource(ints = {1500_00, 3500_00, 6000_00})
     @ParameterizedTest
-    @ValueSource(ints = {1500_00, 3500_00, 6000_00})
+    @ValueSource(ints = {1500_0, 3500_0, 6000_0})
     void speedTest(int n) {
         Integer[] given = buildArray(n);
         final var t0 = System.nanoTime();
@@ -85,4 +64,3 @@ class SelectionSortTest {
 
 
 }
-

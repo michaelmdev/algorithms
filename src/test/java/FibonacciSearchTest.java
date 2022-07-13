@@ -57,8 +57,9 @@ class FibonacciSearchTest {
     }
 
     @ParameterizedTest
+    // original values are not about logarithms definitely, oh those russians :(
     // @ValueSource(ints = {1500, 3500, 6000})
-    @ValueSource(ints = {1024 * 1024, 2048 * 1024, 4096 * 1024, 8192 * 1024, 16384 * 1024, 32768 * 1024, 65535 * 1024})
+    @ValueSource(ints = {1024 * 1024, 2048 * 1024, 4096 * 1024, 8192 * 1024, 16384 * 1024, 32768 * 1024})
     void speedTest(int n) {
         Integer[] given = buildArray(n);
         final var t0 = System.nanoTime();

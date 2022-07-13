@@ -1,0 +1,26 @@
+plugins {
+	id 'java'
+	id 'idea'
+}
+
+group = 'ru.sfedu'
+version = '0.0.1'
+sourceCompatibility = '11'
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+    implementation 'org.jetbrains:annotations:23.0.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.7.0'
+}
+
+test {
+    useJUnitPlatform()
+
+    minHeapSize = "512m"            // initial heap size
+    maxHeapSize = "1024m"           // maximum heap size
+    jvmArgs '-XX:MaxPermSize=512m'  // mem argument for the test JVM
+}
