@@ -1,3 +1,5 @@
+[![Java CI with Gradle](https://github.com/michaelmdev/algorithms/actions/workflows/gradle.yml/badge.svg)](https://github.com/michaelmdev/algorithms/actions/workflows/gradle.yml)
+
 Algorithms
 ==========
 
